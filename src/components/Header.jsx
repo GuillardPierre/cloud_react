@@ -5,13 +5,12 @@ export default function Header() {
   return (
     <header>
       <Navbar expand='lg' className='bg-body-tertiary'>
-        <Container className='d-flex align-items-center'>
+        <Container>
           <Image
             src='https://cdn.pixabay.com/photo/2018/03/26/14/18/man-3262834_960_720.png'
             alt='Image de Mexicain qui fait de la guitare'
-            className='header-image'
           />
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Toggle />
           <Navbar.Collapse
             id='basic-navbar-nav'
             className='justify-content-end'

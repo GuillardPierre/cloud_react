@@ -1,4 +1,5 @@
 import { Card } from 'react-bootstrap';
+import '../assets/styles/dish.scss';
 
 export default function Dish({ dish }) {
   return (
@@ -6,10 +7,7 @@ export default function Dish({ dish }) {
       <Card.Img
         variant='top'
         src={dish.image}
-        width={250}
-        height={164}
         alt={`Photo du plat: ${dish.image}`}
-        className='image'
       />
       <Card.Body>
         <Card.Title>{dish.name}</Card.Title>
