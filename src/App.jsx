@@ -37,9 +37,9 @@ export default function App() {
     <div className='App'>
       <Header />
       <main>
-        {data.map((dish) => (
-          <Dish dish={dish} />
-        ))}
+        <Dish dish={data[0]} />
+        <Dish dish={data[1]} />
+        <Dish dish={data[2]} />
       </main>
       <Footer />
     </div>
