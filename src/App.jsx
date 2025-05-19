@@ -36,11 +36,11 @@ export default function App() {
   return (
     <div className='App'>
       <Header />
-      <section>
+      <main>
         {data.map((dish) => (
           <Dish dish={dish} />
         ))}
-      </section>
+      </main>
       <Footer />
     </div>
   );

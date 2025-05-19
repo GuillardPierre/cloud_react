@@ -3,8 +3,7 @@ export default function Dish({ dish }) {
     <div>
       <h2>{dish.name}</h2>
       <img src={dish.image} alt={'image de' + dish.name} />
-      <p>{dish.description}</p>
-      <p>${dish.price}</p>
+      <p>{dish.price}€</p>
     </div>
   );
 }
