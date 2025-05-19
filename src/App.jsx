@@ -37,18 +37,18 @@ const data = [
 
 export default function App() {
   return (
-    <div className='App'>
+    <div>
       <Header />
-      <main className='main'>
+      <main>
         <Container>
           <Row>
-            <Col xs={12} md={4} className='main-dish'>
+            <Col xs={12} md={4}>
               <Dish dish={data[0]} />
             </Col>
-            <Col xs={12} md={4} className='main-dish'>
+            <Col xs={12} md={4}>
               <Dish dish={data[1]} />
             </Col>
-            <Col xs={12} md={4} className='main-dish'>
+            <Col xs={12} md={4}>
               <Dish dish={data[2]} />
             </Col>
           </Row>

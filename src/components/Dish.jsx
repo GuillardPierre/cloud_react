@@ -1,13 +1,15 @@
 import { Card } from 'react-bootstrap';
-import '../assets/styles/dish.scss';
 
 export default function Dish({ dish }) {
   return (
     <Card>
       <Card.Img
+        variant='top'
         src={dish.image}
+        width={250}
+        height={164}
         alt={`Photo du plat: ${dish.image}`}
-        className='card-image'
+        className='image'
       />
       <Card.Body>
         <Card.Title>{dish.name}</Card.Title>
