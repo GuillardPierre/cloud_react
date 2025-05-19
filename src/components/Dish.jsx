@@ -1,9 +1,18 @@
+import { Card } from 'react-bootstrap';
+import '../assets/styles/dish.scss';
+
 export default function Dish({ dish }) {
   return (
-    <div>
-      <h2>{dish.name}</h2>
-      <img src={dish.image} alt={'image de' + dish.name} />
-      <p>{dish.price}€</p>
-    </div>
+    <Card>
+      <Card.Img
+        src={dish.image}
+        alt={`Photo du plat: ${dish.image}`}
+        className='card-image'
+      />
+      <Card.Body>
+        <Card.Title>{dish.name}</Card.Title>
+        <Card.Text>{dish.price}€</Card.Text>
+      </Card.Body>
+    </Card>
   );
 }

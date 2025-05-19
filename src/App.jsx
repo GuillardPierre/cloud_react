@@ -1,6 +1,9 @@
+import { Col, Container, Row } from 'react-bootstrap';
 import Dish from './components/Dish';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/styles/app.scss';
 
 const data = [
   {
@@ -36,10 +39,20 @@ export default function App() {
   return (
     <div className='App'>
       <Header />
-      <main>
-        <Dish dish={data[0]} />
-        <Dish dish={data[1]} />
-        <Dish dish={data[2]} />
+      <main className='main'>
+        <Container>
+          <Row>
+            <Col xs={12} md={4} className='main-dish'>
+              <Dish dish={data[0]} />
+            </Col>
+            <Col xs={12} md={4} className='main-dish'>
+              <Dish dish={data[1]} />
+            </Col>
+            <Col xs={12} md={4} className='main-dish'>
+              <Dish dish={data[2]} />
+            </Col>
+          </Row>
+        </Container>
       </main>
       <Footer />
     </div>
