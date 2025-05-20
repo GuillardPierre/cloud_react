@@ -1,8 +1,8 @@
-import { Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Badge, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import '../assets/styles/header.scss';
 import logo from '../assets/logo.webp';
 
-export default function Header() {
+export default function Header({ cartCount }) {
   return (
     <header>
       <Navbar expand='lg' className='bg-body-tertiary'>
@@ -19,6 +19,7 @@ export default function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Badge bg='info'>Panier: {cartCount}</Badge>
     </header>
   );
 }
