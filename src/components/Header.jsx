@@ -1,15 +1,13 @@
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import '../assets/styles/header.scss';
+import logo from '../assets/logo.webp';
 
 export default function Header() {
   return (
     <header>
       <Navbar expand='lg' className='bg-body-tertiary'>
         <Container>
-          <Image
-            src='https://cdn.pixabay.com/photo/2018/03/26/14/18/man-3262834_960_720.png'
-            alt='Image de Mexicain qui fait de la guitare'
-          />
+          <Image src={logo} alt='Image de Mexicain qui fait de la guitare' />
           <Navbar.Toggle />
           <Navbar.Collapse
             id='basic-navbar-nav'
