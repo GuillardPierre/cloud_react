@@ -26,7 +26,7 @@ const dishes = [
     image:
       'https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg',
     isNew: false,
-    stock: 4,
+    stock: 0,
   },
   {
     id: 3,
@@ -37,24 +37,26 @@ const dishes = [
     image:
       'https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg',
     isNew: false,
-    stock: 0,
+    stock: 5,
   },
 ];
 
 export default function App() {
+  const filteredDishes = dishes.filter((dish) => dish.stock > 0);
+
+  console.log(filteredDishes);
+
   return (
     <>
       <Header />
       <main>
         <Container>
           <Row>
-            {dishes
-              .filter((dish) => dish.stock > 0)
-              .map((dish) => (
-                <Col key={dish.id} xs={12} md={4}>
-                  <Dish dish={dish} />
-                </Col>
-              ))}
+            {filteredDishes.map((dish) => (
+              <Col key={dish.id} xs={12} md={4}>
+                <Dish dish={dish} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </main>
