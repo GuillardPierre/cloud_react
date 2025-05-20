@@ -1,4 +1,12 @@
 .card-img-top {
   height: 250px;
   width: auto;
+  object-fit: cover;
+}
+
+.badge {
+  width: 30%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

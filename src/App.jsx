@@ -14,6 +14,7 @@ const data = [
     price: 3,
     image:
       'https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg',
+    isNew: true,
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const data = [
     price: 12,
     image:
       'https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg',
+    isNew: false,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const data = [
     price: 15,
     image:
       'https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg',
+    isNew: false,
   },
 ];
 

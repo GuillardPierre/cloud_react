@@ -1,9 +1,10 @@
-import { Card } from 'react-bootstrap';
+import { Badge, Card } from 'react-bootstrap';
 import '../assets/styles/dish.scss';
 
 export default function Dish({ dish }) {
   return (
     <Card>
+      {dish.isNew && <Badge>Nouveau</Badge>}
       <Card.Img
         variant='top'
         src={dish.image}
