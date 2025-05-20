@@ -5,7 +5,7 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/app.scss';
 
-const data = [
+const dishes = [
   {
     id: 1,
     name: 'Tacos à l’unité',
@@ -40,24 +40,20 @@ const data = [
 
 export default function App() {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Container>
           <Row>
-            <Col xs={12} md={4}>
-              <Dish dish={data[0]} />
-            </Col>
-            <Col xs={12} md={4}>
-              <Dish dish={data[1]} />
-            </Col>
-            <Col xs={12} md={4}>
-              <Dish dish={data[2]} />
-            </Col>
+            {dishes.map((dish) => (
+              <Col key={dish.id} xs={12} md={4}>
+                <Dish dish={dish} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
