@@ -1,4 +1,4 @@
-import { Badge, Card } from 'react-bootstrap';
+import { Badge, Button, Card } from 'react-bootstrap';
 import '../assets/styles/dish.scss';
 
 export default function Dish({ dish }) {
@@ -14,6 +14,14 @@ export default function Dish({ dish }) {
         <Card.Title>{dish.name}</Card.Title>
         <Card.Text>{dish.price}€</Card.Text>
       </Card.Body>
+      <Button
+        variant={'primary'}
+        onClick={() => {
+          window.alert(`Le plat ${dish.name} est maintenant dans votre panier`);
+        }}
+      >
+        Ajouter au panier
+      </Button>
     </Card>
   );
 }

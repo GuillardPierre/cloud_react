@@ -44,8 +44,6 @@ const dishes = [
 export default function App() {
   const filteredDishes = dishes.filter((dish) => dish.stock > 0);
 
-  console.log(filteredDishes);
-
   return (
     <>
       <Header />
