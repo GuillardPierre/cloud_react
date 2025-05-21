@@ -5,7 +5,7 @@ import '../assets/styles/header.scss';
 import logo from '../assets/logo.webp';
 
 export default function Header() {
-  const { cartCount } = useContext(CartContext);
+  const { totalCard } = useContext(CartContext);
 
   return (
     <header>
@@ -23,7 +23,7 @@ export default function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Badge bg='info'>Panier: {cartCount}</Badge>
+      <Badge bg='info'>Panier: {totalCard}</Badge>
     </header>
   );
 }

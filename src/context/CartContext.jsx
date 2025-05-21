@@ -1,15 +1,14 @@
-import { createContext, useState } from 'react';
+import { createContext, useReducer } from 'react';
+import { cartReducer, initialState } from '../reducers/cartReducer';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
-
-  const addToCart = () => setCartCount((prev) => prev + 1);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <CartContext.Provider value={{ cartCount, addToCart }}>
+    <CartContext.Provider value={{ totalCard: state, dispatch }}>
       {children}
     </CartContext.Provider>
   );
