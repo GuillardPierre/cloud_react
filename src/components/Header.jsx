@@ -1,11 +1,16 @@
-import { Badge, Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Badge, Container, Image, Nav, Navbar, Stack } from 'react-bootstrap';
 import { CartContext } from '../context/CartContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import '../assets/styles/header.scss';
 import logo from '../assets/logo.webp';
 
 export default function Header() {
   const { totalCard } = useContext(CartContext);
+  const prevCartCountRef = useRef();
+
+  useEffect(() => {
+    prevCartCountRef.current = totalCard;
+  }, [totalCard]);
 
   return (
     <header>
@@ -23,7 +28,10 @@ export default function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Badge bg='info'>Panier: {totalCard}</Badge>
+      <Badge bg='info'>
+        {' '}
+        {`Le panier est passé de ${prevCartCountRef.current} à ${totalCard}`}
+      </Badge>
     </header>
   );
 }

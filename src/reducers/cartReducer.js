@@ -1,8 +1,6 @@
 export const initialState = 0;
 
 export const cartReducer = (state, action) => {
-  console.log(state, action.type);
-
   switch (action.type) {
     case 'increment':
       return state + 1;
