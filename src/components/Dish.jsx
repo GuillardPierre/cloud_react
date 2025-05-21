@@ -1,10 +1,9 @@
 import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import '../assets/styles/dish.scss';
-import { CartContext } from '../context/CartContext';
-import { useContext } from 'react';
+import useCart from '../hooks/useCart';
 
 export default function Dish({ dish }) {
-  const { dispatch } = useContext(CartContext);
+  const { addToCart, removeFromCart } = useCart();
 
   return (
     <Card>
@@ -20,18 +19,12 @@ export default function Dish({ dish }) {
       </Card.Body>
       <Row>
         <Col>
-          <Button
-            variant='danger'
-            onClick={() => dispatch({ type: 'decrement' })}
-          >
+          <Button variant='danger' onClick={removeFromCart}>
             Retirer du panier
           </Button>
         </Col>
         <Col>
-          <Button
-            variant={'primary'}
-            onClick={() => dispatch({ type: 'increment' })}
-          >
+          <Button variant={'primary'} onClick={addToCart}>
             Ajouter au panier
           </Button>
         </Col>

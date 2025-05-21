@@ -1,13 +1,12 @@
 import { Badge, Container, Image, Nav, Navbar, Stack } from 'react-bootstrap';
-import { CartContext } from '../context/CartContext';
-import { useContext, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import '../assets/styles/header.scss';
 import logo from '../assets/logo.webp';
+import useCart from '../hooks/useCart';
 
 export default function Header() {
-  const { totalCard } = useContext(CartContext);
   const prevCartCountRef = useRef();
-
+  const { totalCard } = useCart();
   useEffect(() => {
     prevCartCountRef.current = totalCard;
   }, [totalCard]);
