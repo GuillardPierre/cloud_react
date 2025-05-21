@@ -1,7 +1,11 @@
 import { Badge, Button, Card } from 'react-bootstrap';
 import '../assets/styles/dish.scss';
+import { CartContext } from '../context/CartContext';
+import { useContext } from 'react';
 
-export default function Dish({ dish, addToCart }) {
+export default function Dish({ dish }) {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <Card>
       {dish.isNew && <Badge>Nouveau</Badge>}
